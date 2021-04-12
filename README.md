@@ -1,5 +1,9 @@
-# 201-multi-vm-lbint-zones-scriptext
-Create Multiple Azure VMs in different Availability Zones with internal Standard Load Balancer and custom script extension
+# 201-multizone-multinic-vm-windows
+---UNDER-CONSTRUCTION----
+
+Create Multiple Azure VMs in different Availability Zones with custom script extension to setup Docker on Windows Server
+- Removed Internal Load Balancer  (planned)
+- Added:  attach existing network interface as second NIC (use case licensing server)
 
 INSTALL STEPS:
 Below assumes using the Azure Cloud Shell (PowerShell), with AZ ACCOUNT SET pointing to the correct subscription. 
@@ -7,7 +11,7 @@ Below assumes using the Azure Cloud Shell (PowerShell), with AZ ACCOUNT SET poin
           Step1: Copy the template and parameter json files to your Azure Cloud Shell folder, as well as the deploy-vmazloop.ps1 file
 
           Step1: Edit the parameter file as needed with SubnetRefId, admin username & password, VM quantities, etc. 
-                    ex:  PS /home/clouduser> code ./azuredeploy-vmazloop.parameters.json
+                    ex:  PS /home/clouduser> code ./azuredeploy.parameters.json
 
           Step2: Download locally and review / edit the configure-server.ps1 file to execute desired PowerShell script as desired
                     note:  this will end up being the command to execute in the VM once started as an "extension"
@@ -15,7 +19,7 @@ Below assumes using the Azure Cloud Shell (PowerShell), with AZ ACCOUNT SET poin
           Step3: Create a new Resource Group in the location that matches the values in the parameters file
 
           Step4: Deploy using the provided / uploaded PS script file
-                    ex:  PS /home/clouduser> ./deploy-vmazloop.ps1
+                    ex:  PS /home/clouduser> ./deploy.ps1
                  or deploy using the Azure Portal by copy & paste of the raw values from the json file contents
                     using: New> Template deployment (deploy using custom templates)
           

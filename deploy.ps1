@@ -7,7 +7,7 @@ param(
 )
 
 $deploymentName = "vmazloop101"
-$templateFilePath = "./azuredeploy-vmazloop.json"
-$parametersFilePath = "./azuredeploy-vmazloop.parameters.json"
+$templateFilePath = "./azuredeploy.json"
+$parametersFilePath = "./azuredeploy.parameters.json"
 New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $deploymentName -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath;
 
